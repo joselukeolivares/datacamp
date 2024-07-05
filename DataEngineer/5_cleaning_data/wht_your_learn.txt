@@ -1,0 +1,29 @@
+04/07/2024
+
+Your recent learnings
+
+When you left 19 hours ago, you worked on Common data problems, chapter 1 of the course Cleaning Data in Python. Here is what you covered in your last lesson:
+
+You learned about the importance of cleaning data to ensure the integrity of your analysis in the data science workflow. Specifically, you focused on:
+
+    Data Type Constraints: Understanding that data must be in the correct format for analysis. For example, numerical data represented as strings can lead to incorrect analysis outcomes.
+    Converting Data Types: You practiced converting string data to numerical types using the .astype() method. This is crucial when you need to perform mathematical operations on data initially read as strings.
+    Stripping Unwanted Characters: Using the .str.strip() method to remove unwanted characters from data, such as currency symbols, which allows for the conversion of string data to numerical types.
+    Assert Statements: You learned to use assert statements to verify that your data transformations have been successful. For instance, ensuring that a column's data type has been changed as expected.
+
+Here's a snippet from the lesson demonstrating how to clean and convert a duration column from strings to integers:
+
+
+# Strip duration of minutes
+ride_sharing['duration_trim'] = ride_sharing['duration'].str.strip('minutes') 
+
+# Convert duration to integer
+ride_sharing['duration_time'] = ride_sharing['duration_trim'].astype('int')
+
+# Assert the conversion was successful
+assert ride_sharing['duration_time'].dtype == 'int'
+
+
+This lesson laid the foundation for addressing common data problems, emphasizing the importance of having data in the correct format for analysis.
+
+The goal of the next lesson is to learn how to apply data range constraints in Python using pandas to ensure the quality of data by correcting out-of-range values.

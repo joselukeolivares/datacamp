@@ -1,0 +1,46 @@
+Deploy an ETL pipeline on Kubernetes
+
+You will deploy an ETL pipeline on Kubernetes. Your Extract, Transform, and Load steps will be realized by Pods, which read and write to respective Persistent Volumes that Persistent Volume Claims create.
+
+Your task is to find the total number of passengers that took a NYC yellow cab as a group of 2 or more. Your "Extract Pod" will prepare initial data as a CSV file, and hand it over to the "Transform Pod". This Pod will refine the yellow cab data into an SQLite database, select all the data that is necessary for the final computation, and hand it over to the "Load Pod". This final Pod will sum all the passenger data, present it, and save it as a CSV file.
+
+All of these steps will be performed using the standard Kubernetes objects that you know. There have been two directories prepared, "Docker/" and "Manifests/", which hold the necessary files to create the Docker images and deploy them using Kubernetes.
+
+Instructions 
+1/4
+    * Inspect the files in the Docker/ directory, in particular Docker/Dockerfile.* and Docker/*.sql. You can use a pager like more, or the command cat to view the content of individual files.
+    * Execute the build script 01_build_and_upload_images.sh using the command bash. This will build three Docker images (extract:v1, transform:v1, load:v1), and upload them into your Kubernetes cluster.
+
+Note: There have been two directories prepared, "Docker/" and "Manifests/", which hold the necessary files to create the Docker images and deploy them using Kubernetes. You can exit a cat command using 'CTRL+D'.
+
+bash 01_build_and_upload_images.sh
+
+2/4
+    *Now that the images have been built, it is time to deploy your ETL pipeline.
+    *This time, inspect the files in the Manifests/ directory. You can use a pager like more, or the command cat to view the content of individual files.
+    *Note how first Persistent Volume Claims are declared, one for each step (extract, transform, and load).
+    *Then, Pods are deployed that use the images which you just built and uploaded to Kubernetes.
+    *Applying these Manifests is done using kubectl of course, but this time you would have to use the command seven times, once for each Manifest. To make that easier, a bash script 02_apply_manifests.sh, has been prepared.
+    *Use the command bash to run this script.
+
+bash 02_apply_manifests.sh    
+
+3/4    
+
+
+Now that you have deployed the pipeline, it is time to look at the results!
+
+    *The "load" Pod (pod-load) which you deployed has finally calculated the sum of passengers that took a NYC yellow cab as a group of 2 or more.
+    *Use kubectl logs to inspect the log of this pod.
+
+kubectl logs pod-load
+4/4
+
+
+
+    *Finally, inspect the data that has been used in the different stages.
+    *Using kubectl, get the log of the Pod pod-list-files.
+    *Note how the different Persistent Volumes hold the data the different stages.
+
+ kubectl logs pod-list-files
+

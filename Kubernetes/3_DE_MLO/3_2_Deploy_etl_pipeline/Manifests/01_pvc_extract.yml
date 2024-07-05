@@ -1,0 +1,6 @@
+apiVersion: v1kind: PersistentVolumeClaim
+metadata:  name: pvc-extract
+spec:  storageClassName: local-path
+  accessModes:  - ReadWriteOnce
+  resources:    requests:
+      storage: 10M

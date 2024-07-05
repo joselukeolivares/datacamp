@@ -1,0 +1,4 @@
+FROM alpine
+RUN  apk update
+RUN  apk add sqlite
+COPY transform.sql /transform.sql

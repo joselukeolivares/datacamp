@@ -1,0 +1,44 @@
+An MLOps Workflow
+
+This exercise focuses on applying some Kubernetes concepts to an MLOps workflow.
+
+The data science team in your company uses an algorithm to detect unusually large values (outliers) in a time series from an IoT device. This algorithm is constantly improved, leading to frequent changes that end up as new versions of a respective Docker image. Your task is to support them by putting these algorithms into production, helping the data science team to test the individual performance of the versions.
+
+The following has been prepared:
+
+    The actual data to run the detection algorithm against (data.csv), which will be copied into a Docker image
+    Two different versions of the outlier detection algorithm (detect_outliers_*.py)
+    Two Dockerfiles for creating two images containing these different versions (Dockerfile.outlier_detection_*)
+    A bash script to prepare and upload the images (01_images.sh)
+    A Kubernetes Manifest called 02_pod_outlier-detection.yml is available, which you will use to deploy the outlier detection algorithms.
+
+Instructions 
+1/4
+
+    *Take some time to inspect the Dockerfiles (e.g, using cat). You will notice that this time the data is packaged together with the different outlier detection versions into respective docker images.
+    *Build the Docker images and upload to your Kubernetes cluster using the command bash on the script 01_images.sh.
+
+bash 01_images.sh
+
+2/4
+
+    *The data science team wants you to bring both versions of the outlier detector into production, so that the performance can be compared.
+    *The Kubernetes Manifest 02_pods_outlier-detection.yml will create two respective Pods. Take some time to inspect the Manifest. Note the versions of the images which are going to be deployed.
+    *Deploy the Pods via the Manifest using kubectl.
+
+kubectl apply -f 02_pods_outlier-detection.yml
+
+3/4
+
+    *Now it is time to inspect the performance of the two detectors.
+    *First, use kubectl to get the log from Pod outlier-detection-1. Note that no outlier was detected.
+
+kubectl logs outlier-detection-1
+
+4/4
+
+    *Second, use kubectl to get the log from Pod outlier-detection-2.
+    *Note that this time an outlier was detected! Version 2 of the algorithm seems to work properly, which you report back to your data science colleagues.
+
+kubectl logs outlier-detection-2
+

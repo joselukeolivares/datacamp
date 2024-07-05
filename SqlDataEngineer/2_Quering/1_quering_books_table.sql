@@ -65,3 +65,10 @@ FROM books;
 
 -- Select all columns from library_authors
 SELECT * FROM library_authors;
+
+/*
+
+Amazing! As your SQL queries become long and complex, you'll want to be able to save your queries for referencing later. Views can also be useful when the information contained in a database table isn't quite what you need. You can create your own custom view with exactly the information you are looking for, without needing to edit the database itself, which you may not have permission to do. Creating views is a valuable skill to have, and you've mastered it!
+
+*/
+

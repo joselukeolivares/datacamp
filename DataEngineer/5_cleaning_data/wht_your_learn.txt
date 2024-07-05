@@ -27,3 +27,27 @@ assert ride_sharing['duration_time'].dtype == 'int'
 This lesson laid the foundation for addressing common data problems, emphasizing the importance of having data in the correct format for analysis.
 
 The goal of the next lesson is to learn how to apply data range constraints in Python using pandas to ensure the quality of data by correcting out-of-range values.
+
+05/07/24
+
+When you left 1 day ago, you worked on Text and categorical data problems, chapter 2 of the course Cleaning Data in Python. Here is what you covered in your last lesson:
+
+You learned about handling common data problems, specifically focusing on uniqueness constraints to manage duplicate data in pandas DataFrames. Duplicate data can occur due to various reasons such as data entry errors, bugs in data pipelines, or the merging of data from multiple sources. Here are the key points you covered:
+
+    Identifying Duplicates: You used the .duplicated() method to find duplicate rows in a DataFrame. This method returns a Series of boolean values, marking duplicates as True except for their first occurrence.
+
+    Customizing Duplicate Identification: By adjusting the subset and keep arguments of the .duplicated() method, you learned to refine how duplicates are identified. The subset argument allows focusing on specific columns, while keep controls which duplicates to mark as True.
+
+    Removing Duplicates: The .drop_duplicates() method was used to remove duplicate rows from a DataFrame. Similar to .duplicated(), it also supports subset and keep arguments for targeted removal of duplicates.
+
+    Treating Incomplete Duplicates: For duplicates with discrepancies in certain columns, you explored combining them using statistical measures (e.g., mean or maximum) via the groupby and agg methods. This approach is useful for resolving inconsistencies within duplicated data.
+
+For example, to find and sort duplicate rides in a ride_sharing DataFrame by ride_id, you used:
+
+duplicates = ride_sharing.duplicated(subset='ride_id', keep=False)
+duplicated_rides = ride_sharing[duplicates].sort_values('ride_id')
+print(duplicated_rides[['ride_id', 'duration', 'user_birth_year']])
+
+This lesson equipped you with practical skills to clean and prepare your data by effectively identifying, analyzing, and treating duplicate records.
+
+The goal of the next lesson is to explore advanced techniques for identifying and handling missing data, ensuring data quality for reliable analysis.

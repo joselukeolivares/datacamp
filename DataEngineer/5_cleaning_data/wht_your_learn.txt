@@ -51,3 +51,20 @@ print(duplicated_rides[['ride_id', 'duration', 'user_birth_year']])
 This lesson equipped you with practical skills to clean and prepare your data by effectively identifying, analyzing, and treating duplicate records.
 
 The goal of the next lesson is to explore advanced techniques for identifying and handling missing data, ensuring data quality for reliable analysis.
+
+09/07/2024
+
+You learned about cleaning and preprocessing text data, which is crucial for ensuring data quality and consistency. Text data, encompassing elements like names, phone numbers, and email addresses, often presents challenges such as inconsistencies and formatting issues. Key points covered include:
+
+    Cleaning phone numbers: You saw how to standardize phone number formats by replacing certain characters and ensuring all numbers meet a minimum length requirement. For example, replacing "+" with "00" and removing dashes was achieved using:
+
+    df['phone_number'] = df['phone_number'].str.replace("+", "00").str.replace("-", "")
+
+    Handling missing values: You learned to identify and replace phone numbers that do not meet a minimum digit count with NaN, ensuring data integrity. This involved using string methods to calculate length and conditional replacement.
+    Regular expressions (regex): The lesson introduced regex as a powerful tool for pattern matching and text manipulation, allowing for dynamic and complex data cleaning tasks. You practiced extracting only digits from strings, highlighting regex's utility in cleaning and formatting text data.
+    Removing honorifics from names: By replacing titles like "Dr.", "Mr.", "Miss", and "Ms." with an empty string, you prepared text data for further analysis, such as splitting full names into first and last names.
+    Filtering based on text length: Finally, you isolated survey responses with significant content by filtering out entries below a certain character count, ensuring the data's relevance and richness for analysis.
+
+These techniques form the foundation for effective text data cleaning, enabling more accurate and insightful data analysis.
+
+The goal of the next lesson is to learn how to handle and correct membership constraints in categorical data to ensure its accuracy and integrity.

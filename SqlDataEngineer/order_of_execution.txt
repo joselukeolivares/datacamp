@@ -1,0 +1,20 @@
+step 1: FROM
+step 2: WHERE
+step 3: SELECT (aliases are definded here)
+step 4: Order
+step 5: LIMIT
+
+step 1: FROM
+step 2: GROUP BY
+step 3: SELECT (aliases are definded here)
+step 4: Order
+step 5: LIMIT
+
+step 1: FROM
+step 2: WHERE
+step 3: GROUP BY
+step 4: HAVING
+step 5: SELECT (aliases are definded here)
+step 6: Order
+step 7: LIMIT
+

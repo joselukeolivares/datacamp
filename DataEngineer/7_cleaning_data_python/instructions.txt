@@ -1,0 +1,24 @@
+Subset, clean, and reformat the bank_marketing.csv dataset to create and store three new files based on the requirements detailed in the notebook.
+
+    * Split and tidy bank_marketing.csv, storing as three DataFrames called client, campaign, and economics, each containing the columns outlined in the notebook and formatted to the data types listed.
+    * Save the three DataFrames to csv files, without an index, as client.csv, campaign.csv, and economics.csv respectively.
+
+Resources:
+    LESSONS:
+    *Subsetting columns
+    https://campus.datacamp.com/courses/data-manipulation-with-pandas/transforming-dataframes?ex=4
+    *Cleaning text data
+    https://campus.datacamp.com/courses/cleaning-data-in-python/text-and-categorical-data-problems?ex=8
+    *Data type constraints
+    https://campus.datacamp.com/courses/cleaning-data-in-python/common-data-problems-1?ex=1
+
+    TUTORIALS:
+    *Python pandas tutorial
+    https://www.datacamp.com/tutorial/pandas
+
+    SLIDES
+    *Datetime formatting
+    https://campus.datacamp.com/pdf/web/viewer.html?file=https://projector-video-pdf-converter.datacamp.com/24364/chapter3.pdf#page=1
+    *Combining string data
+    https://campus.datacamp.com/pdf/web/viewer.html?file=https://projector-video-pdf-converter.datacamp.com/735/chapter1.pdf#page=1
+
